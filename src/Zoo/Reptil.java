@@ -1,12 +1,14 @@
+// Codigo hecho por: Jorge Herrero, Ruben Chedas y Alejandro Ares
+
 package Zoo;
 
 import java.util.Random;
 
 public class Reptil extends Animal {
     // Variables de instancia específicas de los reptiles
-    protected String tipoPiel; // Tipo de piel del reptil
-    protected boolean esVeneno; // Indica si el reptil es venenoso
-    protected String habitat; // Hábitat natural del reptil
+    protected String tipoPiel;
+    protected boolean esVeneno; 
+    protected String habitat; 
 
     // Array de tipos de piel posibles
     private static final String[] tiposPielPosibles = {"escamosa", "coriácea", "rugosa"};
@@ -14,10 +16,10 @@ public class Reptil extends Animal {
     // Constructor sin parámetros
     public Reptil() {
         super(); // Llama al constructor de la clase padre (Animal)
-        Random random = new Random(); // Instancia un objeto Random para generar valores aleatorios
+        Random random = new Random();
         // Asigna un tipo de piel aleatorio al reptil
         this.tipoPiel = tiposPielPosibles[random.nextInt(tiposPielPosibles.length)];
-        // Asigna un valor aleatorio para indicar si el reptil es venenoso o no
+       
         this.esVeneno = random.nextBoolean();
         // Genera un hábitat aleatorio para el reptil
         this.habitat = generarHabitatAleatorio();
@@ -26,9 +28,9 @@ public class Reptil extends Animal {
     // Constructor con parámetros
     public Reptil(String nombre, int edad, float peso, String tipoPiel, boolean esVeneno, String habitat) {
         super(nombre, edad, peso); // Llama al constructor de la clase padre (Animal) con los parámetros correspondientes
-        this.tipoPiel = tipoPiel; // Asigna el tipo de piel especificado
-        this.esVeneno = esVeneno; // Asigna si el reptil es venenoso
-        this.habitat = habitat; // Asigna el hábitat especificado
+        this.tipoPiel = tipoPiel; 
+        this.esVeneno = esVeneno; 
+        this.habitat = habitat; 
     }
 
     // Métodos específicos de los reptiles
@@ -55,6 +57,8 @@ public class Reptil extends Animal {
     public void verAnimal() {
         Random random = new Random();
         Runnable[] acciones = {
+                this::comer,
+                this::dormir,
                 this::tomarSol,
                 this::mudarPiel,
                 this::reptar
