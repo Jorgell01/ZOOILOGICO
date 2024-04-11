@@ -15,8 +15,8 @@ public class Cocodrilo extends Reptil {
     }
 
     // Constructor con parámetros
-    public Cocodrilo(String nombre, int edad, float peso, String habitat, String tipoPiel, double tamaño, double fuerzaMordida) {
-        super(nombre, edad, peso, habitat, tipoPiel);
+    public Cocodrilo(String nombre, int edad, float peso, String tipoPiel, boolean esVeneno, String habitat, double tamaño, double fuerzaMordida) {
+        super(nombre, edad, peso, tipoPiel, esVeneno, habitat);
         this.tamaño = tamaño;
         this.fuerzaMordida = fuerzaMordida;
     }
